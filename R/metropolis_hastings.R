@@ -3,7 +3,7 @@ MetropolisHastings <- function(mixingDistribution, x, start_pos, no_draws=100){
 }
 
 MetropolisHastings.default <- function(mixingDistribution, x, start_pos, no_draws = 100) {
-  parameter_samples <- list()
+  parameter_samples <- vector("list", length(start_pos))
   for (i in seq_along(start_pos)) {
     parameter_samples[[i]] <- array(dim = c(dim(start_pos[[i]])[1:2], no_draws))
     parameter_samples[[i]][, , 1] <- start_pos[[i]][, , 1]
@@ -22,7 +22,7 @@ MetropolisHastings.default <- function(mixingDistribution, x, start_pos, no_draw
     new_prior <- log(PriorDensity(mixingDistribution, prop_param))
     new_Likelihood <- sum(log(Likelihood(mixingDistribution, x, prop_param)))
 
-    accept_prob <- exp(new_prior + new_Likelihood - old_prior - old_Likelihood)
+    accept_prob <- min(1, exp(new_prior + new_Likelihood - old_prior - old_Likelihood))
 
     if (is.na(accept_prob) | !length(accept_prob) ) {
       accept_prob <- 0
@@ -50,7 +50,8 @@ MetropolisHastings.default <- function(mixingDistribution, x, start_pos, no_draw
 
 MetropolisHastings.weibull <- function(mixingDistribution, x, start_pos, no_draws=100){
 
-  lamSamp <- 1/rgamma(1, length(x)+mixingDistribution$priorParameters[2], sum(x^c(start_pos[[1]])) + mixingDistribution$priorParameters[3])
+  lamSamp <- 1/rgamma(1, length(x)+mixingDistribution$priorParameters[2],
+                      sum(x^c(start_pos[[1]])) + mixingDistribution$priorParameters[3])
   start_pos[[2]] <- array(lamSamp, dim=c(1,1,1))
 
   parameter_samples <- list()
@@ -68,13 +69,14 @@ MetropolisHastings.weibull <- function(mixingDistribution, x, start_pos, no_draw
   for(i in seq_len(no_draws-1)){
 
     prop_param <- MhParameterProposal(mixingDistribution, old_param)
-    lamSamp <- 1/rgamma(1, length(x)+mixingDistribution$priorParameters[2], sum(x^c(prop_param[[1]])) + mixingDistribution$priorParameters[3])
+    lamSamp <- 1/rgamma(1, length(x)+mixingDistribution$priorParameters[2],
+                        sum(x^c(prop_param[[1]])) + mixingDistribution$priorParameters[3])
     prop_param[[2]] <- array(lamSamp, dim=c(1,1,1))
 
     new_prior <- log(PriorDensity(mixingDistribution, prop_param))
     new_Likelihood <- sum(log(Likelihood(mixingDistribution, x, prop_param)))
 
-    accept_prob <- exp(new_prior + new_Likelihood - old_prior - old_Likelihood)
+    accept_prob <- min(1, exp(new_prior + new_Likelihood - old_prior - old_Likelihood))
 
     if (is.na(accept_prob)) {
       accept_prob <- 0

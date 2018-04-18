@@ -59,10 +59,10 @@ test_that("Beta Posterior Draw", {
 
   post_draws <- PosteriorDraw(test_mdobj, x=matrix(rbeta(10, 1,1),ncol=1), n=10)
 
-  expect_is(PosteriorDraw(md=test_mdobj, x=rbeta(10, 1,1), n=10), "list")
-  expect_equal(length(PosteriorDraw(test_mdobj, rbeta(10, 1,1), 10)), 2)
-  expect_equal(dim(PosteriorDraw(test_mdobj, rbeta(10, 1,1), 10)[[1]]), c(1,1,10))
-  expect_equal(dim(PosteriorDraw(test_mdobj, rbeta(10, 1,1), 10)[[2]]), c(1,1,10))
+  expect_is(post_draws, "list")
+  expect_length(post_draws, 2)
+  expect_equal(dim(post_draws[[1]]), c(1,1,10))
+  expect_equal(dim(post_draws[[2]]), c(1,1,10))
 
 })
 
@@ -101,8 +101,7 @@ test_that("Beta Prior Parameters Update", {
 test_that("Beta Dirichlet Process Create", {
 
   pts <- rbeta(10, 2,2)
-  beta_md_obj <- BetaMixtureCreate(c(2,8), c(1, 1), 1, hyperPriorParameters=c(1, 0.125))
-  beta_dpobj <- DirichletProcessCreate(pts, beta_md_obj, c(2,4))
+  beta_dpobj <- DirichletProcessBeta(pts, 1, verbose = FALSE)
 
   expect_is(beta_dpobj, c("list", "dirichletprocess", "beta", "nonconjugate"))
   expect_equal(beta_dpobj$data, as.matrix(pts))
@@ -129,9 +128,7 @@ test_that("Beta Dirichlet Process Initialise", {
 test_that("Beta Component Update", {
 
   pts <- rbeta(10, 2,2)
-  beta_md_obj <- BetaMixtureCreate(c(2,8), c(1, 1), 1, hyperPriorParameters=c(1, 0.125))
-  beta_dpobj <- DirichletProcessCreate(pts, beta_md_obj, c(2,4))
-  beta_dpobj <- Initialise(beta_dpobj, verbose=FALSE)
+  beta_dpobj <- DirichletProcessBeta(pts, 1, verbose = FALSE)
   beta_dpobj <- ClusterComponentUpdate(beta_dpobj)
 
   expect_length(beta_dpobj$clusterParameters, 2)
@@ -256,30 +253,56 @@ test_that("Beta Cluster Label Change B", {
   expect_length(beta_dpobj$clusterParameters[[2]], 1)
 })
 
-test_that("Beta Posterior Clusters", {
+test_that("Beta DP Posterior Clusters", {
 
   pts <- rbeta(10, 2,2)
-  beta_md_obj <- BetaMixtureCreate(c(2,8), c(1, 1), 1, hyperPriorParameters=c(1, 0.125))
-  beta_dpobj <- DirichletProcessCreate(pts, beta_md_obj, c(2,4))
-  beta_dpobj <- Initialise(beta_dpobj, verbose=FALSE)
+  beta_dpobj <- DirichletProcessBeta(pts, 1)
   beta_dpobj <- Fit(beta_dpobj, 5, FALSE, FALSE)
 
-  pst_cl_test <- PosteriorClusters(beta_dpobj)
+  post_cl_test <- PosteriorClusters(beta_dpobj)
+
+  expect_is(post_cl_test, "list")
+  expect_is(post_cl_test[[1]], "numeric")
+
+  expect_length(post_cl_test, 2)
+  expect_length(post_cl_test[[2]], 2)
 
 })
 
-test_that("Beta Posterior Function", {
+test_that("Beta DP Posterior Function", {
 
   pts <- rbeta(10, 2,2)
-  beta_md_obj <- BetaMixtureCreate(c(2,8), c(1, 1), 1, hyperPriorParameters=c(1, 0.125))
-  beta_dpobj <- DirichletProcessCreate(pts, beta_md_obj, c(2,4))
-  beta_dpobj <- Initialise(beta_dpobj, verbose=FALSE)
+  beta_dpobj <- DirichletProcessBeta(pts, 1)
   beta_dpobj <- Fit(beta_dpobj, 5, FALSE, FALSE)
 
   post_func <- PosteriorFunction(beta_dpobj)
 
+  expect_is(post_func, "function")
+
 })
 
+test_that("Beta Penelised Likelihodd", {
+  maxT <- 1
+  mu <- 0.5
+  tau <- 4
 
+  a <- (mu * tau)/maxT
+  b <- (1 - mu/maxT) * tau
+
+  pts <- rbeta(100, a, b)
+  beta_md_obj <- BetaMixtureCreate(c(2,8), c(1, 1), 1, hyperPriorParameters=c(1, 0.125))
+
+  testParams <- PenalisedLikelihood(beta_md_obj, pts)
+
+  expect_is(testParams, "list")
+  expect_length(testParams, 2)
+
+  expect_is(testParams[[1]], "array")
+  expect_is(testParams[[2]], "array")
+
+  expect_length(testParams[[1]], 1)
+  expect_length(testParams[[2]], 1)
+
+})
 
 

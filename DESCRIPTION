@@ -1,15 +1,23 @@
 Package: dirichletprocess
 Type: Package
 Title: Build Dirichlet Process Objects for Bayesian Modelling
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: c(
-            person("Dean", "Markwick", email="dean.markwick@talk21.com", role=c("aut", "cre")),
-            person("Gordon", "J. Ross", email="gordon@gordonjross.co.uk", role=c("aut"))
+            person("Gordon", "J. Ross", email="gordon@gordonjross.co.uk", role=c("aut")),
+            person("Dean", "Markwick", email="dean.markwick@talk21.com", role=c("aut", "cre"))
           )
 Maintainer: Dean Markwick <dean.markwick@talk21.com>
-Description: Create Dirichlet process objects that can be used as infinite mixture models in a variety of ways.
-    Some examples include; density estimation, Poisson process intensity inference, hierarchical modelling and clustering. 
-    See Teh, Y. W. (2011) <https://www.stats.ox.ac.uk/~teh/research/npbayes/Teh2010a.pdf>, among many other sources.
+Description: Perform nonparametric Bayesian analysis using Dirichlet 
+    processes without the need to program the inference algorithms. 
+    Utilise included pre-built models or specify custom 
+    models and allow the dirichletprocess package to handle the 
+    Markov chain Monte Carlo sampling. 
+    Our Dirichlet process objects can act as building blocks for a variety 
+    of statistical models including and not limited to: density estimation, 
+    clustering and prior distributions in hierarchical models.
+    See Teh, Y. W. (2011) 
+    <https://www.stats.ox.ac.uk/~teh/research/npbayes/Teh2010a.pdf>, 
+    among many other sources.
 Depends: R (>= 2.10)
 License: GPL-3
 Encoding: UTF-8
@@ -20,8 +28,8 @@ URL: https://github.com/dm13450/dirichletprocess
 BugReports: https://github.com/dm13450/dirichletprocess/issues
 RoxygenNote: 6.0.1
 NeedsCompilation: no
-Packaged: 2018-01-29 10:03:39 UTC; deanmarkwick
-Author: Dean Markwick [aut, cre],
-  Gordon J. Ross [aut]
+Packaged: 2018-04-18 13:56:36 UTC; deanmarkwick
+Author: Gordon J. Ross [aut],
+  Dean Markwick [aut, cre]
 Repository: CRAN
-Date/Publication: 2018-01-29 18:23:55 UTC
+Date/Publication: 2018-04-18 16:36:06 UTC
