@@ -1,16 +1,18 @@
 Package: dirichletprocess
 Type: Package
 Title: Build Dirichlet Process Objects for Bayesian Modelling
-Version: 0.2.1
+Version: 0.2.2
 Authors@R: c(
             person("Gordon", "J. Ross", email="gordon@gordonjross.co.uk", role=c("aut")),
-            person("Dean", "Markwick", email="dean.markwick@talk21.com", role=c("aut", "cre"))
+            person("Dean", "Markwick", email="dean.markwick@talk21.com", role=c("aut", "cre")),
+            person("Kees", "Mulder", email="keestimmulder@gmail.com", role=c("ctb"), 
+            comment = c(ORCID = "0000-0002-5387-3812"))
           )
 Maintainer: Dean Markwick <dean.markwick@talk21.com>
 Description: Perform nonparametric Bayesian analysis using Dirichlet 
     processes without the need to program the inference algorithms. 
     Utilise included pre-built models or specify custom 
-    models and allow the dirichletprocess package to handle the 
+    models and allow the 'dirichletprocess' package to handle the 
     Markov chain Monte Carlo sampling. 
     Our Dirichlet process objects can act as building blocks for a variety 
     of statistical models including and not limited to: density estimation, 
@@ -26,10 +28,11 @@ Suggests: testthat, knitr, rmarkdown, tidyr, dplyr
 Imports: gtools, ggplot2, mvtnorm
 URL: https://github.com/dm13450/dirichletprocess
 BugReports: https://github.com/dm13450/dirichletprocess/issues
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
 NeedsCompilation: no
-Packaged: 2018-04-18 13:56:36 UTC; deanmarkwick
+Packaged: 2018-11-23 17:38:05 UTC; deanmarkwick
 Author: Gordon J. Ross [aut],
-  Dean Markwick [aut, cre]
+  Dean Markwick [aut, cre],
+  Kees Mulder [ctb] (<https://orcid.org/0000-0002-5387-3812>)
 Repository: CRAN
-Date/Publication: 2018-04-18 16:36:06 UTC
+Date/Publication: 2018-11-23 17:50:03 UTC
