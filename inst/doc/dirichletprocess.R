@@ -4,7 +4,7 @@
 ###################################################
 ### code chunk number 1: preliminaries
 ###################################################
-#options(prompt = "R> ", continue = "+  ", width = 70, useFancyQuotes = FALSE)
+options(prompt = "R> ", continue = "+  ", width = 70, useFancyQuotes = FALSE)
 library(dirichletprocess)
 
 
