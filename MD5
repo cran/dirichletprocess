@@ -1,6 +1,6 @@
-c81f1a8dfc6f7b462070a4e72a4e0ec3 *DESCRIPTION
+9d1a147ba8b7f6ee7a1c6f5bd45fa9f9 *DESCRIPTION
 9a31f335e84a37b1dfeca4c046d95736 *NAMESPACE
-ac505a29c4a0fc5e644367a4edd3c912 *NEWS.md
+f1cea2187f237a8e06ba7fcf80207076 *NEWS.md
 a3105658a8ec7e3315ded17da384a089 *R/beta_uniform_gamma.R
 b392045bfd22b93f4eca0e85c2867685 *R/beta_uniform_pareto.R
 a161c2814e0845c83a609fba3c3cc0ed *R/burn.R
@@ -18,7 +18,7 @@ d75e71320345e17d7c0468751e8edbc0 *R/dirichlet_hmm_create.R
 8f547b287d8b51fac974d570925f21ba *R/dirichlet_process_exponential.R
 a5515110b888a2002d86f9d39dc82b61 *R/dirichlet_process_gaussian.R
 fe9b7c0b573e841c28ff28dfe53174e4 *R/dirichlet_process_hierarchical_beta.R
-e978d3a97de3d0026cc9c0b0b89d0cab *R/dirichlet_process_mvnormal.R
+ea57eef7546c8b504a4ff3eaf1186b6c *R/dirichlet_process_mvnormal.R
 de412295066ed0ae9494970379915c17 *R/dirichlet_process_mvnormal2.R
 3a21f369e1e095c6a55d03c59eab4af0 *R/dirichlet_process_weibull.R
 47b176fe62234c3132be5eb62fc62831 *R/dirichletprocess.R
@@ -28,7 +28,7 @@ fe1bc129ee09730c8cf648d12ddc2962 *R/exponential_gamma.R
 235d3b556fb0eeea9111f7ecef11805c *R/fit_hmm.R
 fe18518363c91fe86331594e57fa63fd *R/global_parameter_update.R
 6cc76c8b97af2d77d7d2bdf26fa19d24 *R/hierarchical_beta.R
-b3f47611a61b19bd8a73ca34e8a0168d *R/initialise.R
+9d86c56dc2a745405a5cd28d8b477076 *R/initialise.R
 e932d773eea1233785c9355ec861d139 *R/likelihood.R
 b5fdc583d1e50d90bc2cfe6ce2f05498 *R/likelihood_function.R
 103ddf7966039956d69b5dc7bd005d6e *R/metropolis_hastings.R
@@ -41,8 +41,8 @@ d0e572c509be11893e36e8ec8f67ff8f *R/mixing_distribution_posterior_parameters.R
 9047566d298207769b08f0fa58ed0710 *R/mixing_distribution_prior_density.R
 42c63bcc35f843deae716ab3524781cd *R/mixing_distribution_prior_draw.R
 52b3d0ce4078e3fefab801357330ebb3 *R/mixing_distribution_update_prior_parameters.R
-b80d2175b5ea03ce5e885feaa496dff9 *R/mvnormal_normal_wishart.R
-62623952071d382fefe3bac9bfd3d9f5 *R/mvnormal_semi_conjugate.R
+80d23abb54d6965eca16b5fb096665dc *R/mvnormal_normal_wishart.R
+32ff2b2db8cc768224c4d2d75610f612 *R/mvnormal_semi_conjugate.R
 2555f23527afc3e783e784ddeb9943a5 *R/normal_inverse_gamma.R
 ceb665c4033ebfead239e5b3ed9354d6 *R/plot.R
 7eccaea7319e3ec4487548abbf7131e0 *R/plot_dirichletprocess.R
@@ -50,21 +50,21 @@ ceb665c4033ebfead239e5b3ed9354d6 *R/plot.R
 9189956ae22f2d923bac2a44872f301d *R/posterior_clusters.R
 2919606d29338903ae07a4cb63eb2578 *R/posterior_frame.R
 e449203664e4d13c216aaa0aef9904c3 *R/print.R
-a0c3b27629e53ffa0cd9b278621d7c59 *R/stick_breaking.R
+83b557ecdcc67254497c262b57bcb8e6 *R/stick_breaking.R
 1987458ca36bef75cde0601ed0fecebb *R/table_update.R
 ee7f5da121d13660a126128451d06a04 *R/update_alpha.R
 5451399d2fdb5fc75f8c04bcaa6a7f3b *R/update_alpha_beta.R
 a9b34affae72374d55571a5f21d0fe1d *R/update_concentration.R
 daefd751a14b7d5ef22c98232544b319 *R/update_g0.R
 b5d1d182d646d333611d393ba72e483a *R/update_states.R
-91c486a9c3288558628e76d27174b41c *R/utilities.R
+c29cbb426c33aa4fac9a07756994e23a *R/utilities.R
 78a58113f995a21c889944d3034672ac *R/weibull_uniform_gamma.R
 971f6ae235f836bbee7f7c73d5bf3cec *README.md
 46436c4a65fa9e81bb877d12b91769fb *build/vignette.rds
 5f63ba23a2be1e22be6dfbe656d033d4 *data/rats.rda
 e2ac9eb87caac1ec8da9a0fc3482b4af *inst/doc/dirichletprocess.R
-b404b3dda5ee5a77191985b9a148753d *inst/doc/dirichletprocess.Rnw
-4774bbe6b4e3811bba6efdcd253bc999 *inst/doc/dirichletprocess.pdf
+d91109f59ca8f51637bc9fe96cd964db *inst/doc/dirichletprocess.Rnw
+a0e4293f8c93bc6c305064b46639baec *inst/doc/dirichletprocess.pdf
 517bf9db3066b63ee0fcc9e60fce5d84 *man/BetaMixture2Create.Rd
 643493e0910d76b2443a25724c415c4d *man/BetaMixtureCreate.Rd
 6147b9a6fbf14c905780bfa0778d33ca *man/Burn.Rd
@@ -80,7 +80,7 @@ f3a54745ee45bd1222ca55c3564f773b *man/ChangeObservations.Rd
 7398ca437c95434d1dd4857836746800 *man/DirichletProcessExponential.Rd
 d3585d343262d91ade55297ca197ace8 *man/DirichletProcessGaussian.Rd
 d87c09eacbce0832e66d47fe7c07b121 *man/DirichletProcessHierarchicalBeta.Rd
-b3c12c8482c85f741c0cc96db2de8482 *man/DirichletProcessMvnormal.Rd
+a5fc6538be4a71f1cb93871a25f93704 *man/DirichletProcessMvnormal.Rd
 a38390ae6fd0720f57264b8c1e8674ce *man/DirichletProcessMvnormal2.Rd
 3e8ce22936cb046083d568c6ac87cb8b *man/DirichletProcessWeibull.Rd
 31426a5d39790da54aac81dc3d1a78b7 *man/ExponentialMixtureCreate.Rd
@@ -89,7 +89,7 @@ e61eeea00875dcba68a1bbbd89a1ea1c *man/Fit.markov.Rd
 b9ca4890ffb4bbc141e3eb7fc4540b3b *man/GaussianMixtureCreate.Rd
 b5d16f5fcfc4fa50ec9e46fa6cc1dc4f *man/GlobalParameterUpdate.Rd
 e15fcb4509f3c6f0273a2d9249846c8a *man/HierarchicalBetaCreate.Rd
-db3e537700cc48fc9adf6fed216cc2db *man/Initialise.Rd
+6e6d4588e6511d19eec0909535604e89 *man/Initialise.Rd
 a867d985562feea3e6666fe32e862278 *man/Likelihood.Rd
 3a0c378f80cce5f34dc6dba289cf0e24 *man/LikelihoodDP.Rd
 9d150d52c5e671d2ff706b7c4d9afd6e *man/LikelihoodFunction.Rd
@@ -116,6 +116,7 @@ a6c59d13689c736e5ddb608e5b0a8b4a *man/print.dirichletprocess.Rd
 0776fc44baef67fbe8d7119852cb03c2 *man/rats.Rd
 76505d91f5f170916bed8d4a00195a1e *man/weighted_function_generator.Rd
 d3826573bdbd05be6748831dfefc795c *tests/testthat.R
+de68615c7a7b14e166f9e3df69965d21 *tests/testthat/Rplots.pdf
 95fcdc6d3e46848ad0261164ee1671ec *tests/testthat/test_beta_uniform_gamma.R
 300a2be905dc21f1090b66f3ac668c82 *tests/testthat/test_beta_uniform_pareto.R
 146c28daf5415ac66c8a35c7087017f2 *tests/testthat/test_change_observations.R
@@ -132,7 +133,7 @@ a395e9f6973daf18b31e5d7c61b1ad8b *tests/testthat/test_duplicate_cluster_remove.R
 514d92d87c12f0c402a58ed97735c061 *tests/testthat/test_global_parameter_update.R
 6b0a963c330402afe541519296ce41bd *tests/testthat/test_likelihood.R
 643d43863f92b834e1a62f32d17a154e *tests/testthat/test_metropolis_hastings.R
-438123848dbf1a966eb995a95afba5c3 *tests/testthat/test_mvnormal_normal_wishart.R
+175a9b3dcfc52169acb9905966ded8a7 *tests/testthat/test_mvnormal_normal_wishart.R
 0be5cc433dcacc1ce056aa58ea64ace5 *tests/testthat/test_mvnormal_semi_conjugate.R
 439028e2e016cd15b728fca4d5a46139 *tests/testthat/test_nonconjugate.R
 4bf475bca6e4b93ab99e26669ef51918 *tests/testthat/test_normal_inverse_gamma.R
@@ -153,7 +154,7 @@ fcea46af51c46cf495013b3ab8e5cbe4 *tests/testthat/test_update_alpha.R
 4d7e575a321de7eb18d796db254b2a7e *vignettes/Code/generate_graphs.R
 9b291ef98cd8d64dc8778b94cf924ffc *vignettes/Code/graph_theme.R
 09473c4c3eda4d74fdc300ab0821be48 *vignettes/Code/weibull_censor.R
-b404b3dda5ee5a77191985b9a148753d *vignettes/dirichletprocess.Rnw
+d91109f59ca8f51637bc9fe96cd964db *vignettes/dirichletprocess.Rnw
 8d688351a9158a95a0be5bb2ba33c2ce *vignettes/dirichletprocess.bib
 1a6b88ea5389616e74b55bc59188f109 *vignettes/img/betaGraph.pdf
 f78bbe80661a9d7f4fec4cbe22217abb *vignettes/img/clustering-1.png

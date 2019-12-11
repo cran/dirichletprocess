@@ -4,7 +4,8 @@
 \alias{Initialise}
 \title{Initialise a Dirichlet process object}
 \usage{
-Initialise(dpObj, posterior = TRUE, m = 3, verbose = TRUE)
+Initialise(dpObj, posterior = TRUE, m = 3, verbose = TRUE,
+  numInitialClusters = 1)
 }
 \arguments{
 \item{dpObj}{A Dirichlet process object.}
@@ -14,6 +15,8 @@ Initialise(dpObj, posterior = TRUE, m = 3, verbose = TRUE)
 \item{m}{Number of auxiliary variables to use for a non-conjugate mixing distribution. Defaults to m=3. See \code{\link{ClusterComponentUpdate}} for more details on m.}
 
 \item{verbose}{Logical flag indicating whether to output the acceptance ratio for non-conjugate mixtures.}
+
+\item{numInitialClusters}{Number of clusters to initialise with.}
 }
 \value{
 A Dirichlet process object that has initial cluster allocations.
