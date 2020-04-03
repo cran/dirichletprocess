@@ -1,4 +1,4 @@
-9d1a147ba8b7f6ee7a1c6f5bd45fa9f9 *DESCRIPTION
+1a86b63c62e1e67214244b96e34a583f *DESCRIPTION
 9a31f335e84a37b1dfeca4c046d95736 *NAMESPACE
 f1cea2187f237a8e06ba7fcf80207076 *NEWS.md
 a3105658a8ec7e3315ded17da384a089 *R/beta_uniform_gamma.R
@@ -60,11 +60,11 @@ b5d1d182d646d333611d393ba72e483a *R/update_states.R
 c29cbb426c33aa4fac9a07756994e23a *R/utilities.R
 78a58113f995a21c889944d3034672ac *R/weibull_uniform_gamma.R
 971f6ae235f836bbee7f7c73d5bf3cec *README.md
-46436c4a65fa9e81bb877d12b91769fb *build/vignette.rds
-5f63ba23a2be1e22be6dfbe656d033d4 *data/rats.rda
+85653b8878b907bf8edf5dbb6ca45acd *build/vignette.rds
+c0971b39eea2f4521857c964d2298007 *data/rats.rda
 e2ac9eb87caac1ec8da9a0fc3482b4af *inst/doc/dirichletprocess.R
 d91109f59ca8f51637bc9fe96cd964db *inst/doc/dirichletprocess.Rnw
-a0e4293f8c93bc6c305064b46639baec *inst/doc/dirichletprocess.pdf
+93170fb7591aa53298551fb4890370d6 *inst/doc/dirichletprocess.pdf
 517bf9db3066b63ee0fcc9e60fce5d84 *man/BetaMixture2Create.Rd
 643493e0910d76b2443a25724c415c4d *man/BetaMixtureCreate.Rd
 6147b9a6fbf14c905780bfa0778d33ca *man/Burn.Rd

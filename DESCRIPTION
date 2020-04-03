@@ -1,7 +1,7 @@
 Package: dirichletprocess
 Type: Package
 Title: Build Dirichlet Process Objects for Bayesian Modelling
-Version: 0.3.1
+Version: 0.3.1.1
 Authors@R: c(
             person("Gordon", "J. Ross", email="gordon@gordonjross.co.uk", role=c("aut")),
             person("Dean", "Markwick", email="dean.markwick@talk21.com", role=c("aut", "cre")),
@@ -30,9 +30,9 @@ URL: https://github.com/dm13450/dirichletprocess
 BugReports: https://github.com/dm13450/dirichletprocess/issues
 RoxygenNote: 6.1.1
 NeedsCompilation: no
-Packaged: 2019-12-11 06:57:13 UTC; deanmarkwick
+Packaged: 2020-03-30 11:54:51 UTC; hornik
 Author: Gordon J. Ross [aut],
   Dean Markwick [aut, cre],
   Kees Mulder [ctb] (<https://orcid.org/0000-0002-5387-3812>)
 Repository: CRAN
-Date/Publication: 2019-12-11 08:10:03 UTC
+Date/Publication: 2020-04-03 06:49:26 UTC
