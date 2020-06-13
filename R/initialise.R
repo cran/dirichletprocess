@@ -16,7 +16,7 @@ Initialise <- function(dpObj, posterior = TRUE, m=3, verbose=TRUE, numInitialClu
 #' @export
 Initialise.conjugate <- function(dpObj, posterior = TRUE, m=NULL, verbose=NULL, numInitialClusters = 1) {
 
-  dpObj$clusterLabels <- rep(seq_len(numInitialClusters), dpObj$n)
+  dpObj$clusterLabels <- rep_len(seq_len(numInitialClusters), length.out = dpObj$n)
   dpObj$numberClusters <- numInitialClusters
   dpObj$pointsPerCluster <- vapply(seq_len(numInitialClusters), function(x) sum(dpObj$clusterLabels == x), numeric(1))
 
@@ -49,8 +49,11 @@ Initialise.nonconjugate <- function(dpObj, posterior = TRUE, m = 3, verbose = TR
                 length(unique(c(post_draws[[1]])))/1000,
                 "\n"))
 
-    dpObj$clusterParameters <- list(post_draws[[1]][, , 1000, drop = FALSE],
-                                    post_draws[[2]][, , 1000, drop = FALSE])
+    dpObj$clusterParameters <- lapply(post_draws, function(x) x[, , 1000, drop = FALSE])
+
+
+    # dpObj$clusterParameters <- list(post_draws[[1]][, , 1000, drop = FALSE],
+                                    # post_draws[[2]][, , 1000, drop = FALSE])
   } else {
     dpObj$clusterParameters <- PriorDraw(dpObj$mixingDistribution, 1)
   }

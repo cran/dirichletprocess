@@ -203,7 +203,35 @@ library(dirichletprocess)
 
 
 ###################################################
-### code chunk number 14: stickbreaking-gen (eval = FALSE)
+### code chunk number 14: hierarchical-normal-plot (eval = FALSE)
+###################################################
+## N <- 300
+## 
+## #Sample N random uniform U
+## U <- runif(N)
+## 
+## group1 <- matrix(nrow=N, ncol=2)
+## group2 <- matrix(nrow=N, ncol=2)
+## #Sampling from the mixture
+## for(i in 1:N){
+##   if(U[i]<.3){
+##     group1[i,] <- rmvnorm(1,c(-2,-2))
+##     group2[i,] <- rmvnorm(1,c(-2,-2))
+##   }else if(U[i]<0.7){
+##     group1[i,] <- rmvnorm(1,c(2,2))
+##     group2[i,] <- rmvnorm(1,c(-2,-2))
+##   }else {
+##     group1[i,] <- rmvnorm(1,c(2,2))
+##     group2[i,] <- rmvnorm(1,c(2,2))
+##   }
+## }
+## 
+## hdp_mvnorm <- DirichletProcessHierarchicalMvnormal2(list(group1,group2))
+## hdp_mvnorm <- Fit(hdp_mvnorm, 500)
+
+
+###################################################
+### code chunk number 15: stickbreaking-gen (eval = FALSE)
 ###################################################
 ## y <- cumsum(runif(1000))
 ## pdf <- function(x) sin(x/50)^2
@@ -212,7 +240,7 @@ library(dirichletprocess)
 
 
 ###################################################
-### code chunk number 15: stickbreaking (eval = FALSE)
+### code chunk number 16: stickbreaking (eval = FALSE)
 ###################################################
 ## dp <- DirichletProcessBeta(sample(pts, 100), maxY = max(pts)*1.01,
 ## alphaPrior = c(2, 0.01))
@@ -229,7 +257,7 @@ library(dirichletprocess)
 
 
 ###################################################
-### code chunk number 16: stickbreaking-plot (eval = FALSE)
+### code chunk number 17: stickbreaking-plot (eval = FALSE)
 ###################################################
 ## posteriorFrame <- PosteriorFrame(dp, seq(0, max(pts)*1.01, by=0.1))
 ## 
@@ -244,7 +272,7 @@ library(dirichletprocess)
 
 
 ###################################################
-### code chunk number 17: poissonMD (eval = FALSE)
+### code chunk number 18: poissonMD (eval = FALSE)
 ###################################################
 ## poisMd <- MixingDistribution(distribution="poisson",
 ##                              priorParameters = c(1, 1),
@@ -252,7 +280,7 @@ library(dirichletprocess)
 
 
 ###################################################
-### code chunk number 18: poisson (eval = FALSE)
+### code chunk number 19: poisson (eval = FALSE)
 ###################################################
 ## y <- c(rpois(150, 3), rpois(150, 10)) #generate sample data
 ## dp <- DirichletProcessCreate(y, poisMd)
@@ -277,7 +305,7 @@ library(dirichletprocess)
 
 
 ###################################################
-### code chunk number 19: gamma (eval = FALSE)
+### code chunk number 20: gamma (eval = FALSE)
 ###################################################
 ## y <- c(rgamma(100, 2, 4), rgamma(100, 6, 3)) #generate sample data
 ## dp <- DirichletProcessCreate(y, gammaMd)
@@ -299,7 +327,7 @@ library(dirichletprocess)
 
 
 ###################################################
-### code chunk number 20: censoredMD (eval = FALSE)
+### code chunk number 21: censoredMD (eval = FALSE)
 ###################################################
 ## mdobjA <- MixingDistribution("weibullcens",
 ##                              c(1,2,0.5), "nonconjugate",
@@ -315,7 +343,7 @@ library(dirichletprocess)
 
 
 ###################################################
-### code chunk number 21: censored (eval = FALSE)
+### code chunk number 22: censored (eval = FALSE)
 ###################################################
 ## dpA <- DirichletProcessCreate(data_a, mdobjA, c(2, 0.9))
 ## dpA <- Initialise(dpA)
@@ -328,7 +356,7 @@ library(dirichletprocess)
 
 
 ###################################################
-### code chunk number 22: cluster-prediciton (eval = FALSE)
+### code chunk number 23: cluster-prediciton (eval = FALSE)
 ###################################################
 ## faithfulTrans <- scale(faithful)
 ## trainIndex <- 1:(nrow(faithfulTrans)-5)
@@ -340,7 +368,7 @@ library(dirichletprocess)
 
 
 ###################################################
-### code chunk number 23: cluster-prediciton-plot (eval = FALSE)
+### code chunk number 24: cluster-prediciton-plot (eval = FALSE)
 ###################################################
 ## faithfulTrainPlot <- data.frame(faithful[trainIndex, ],
 ##                                 Label=dp$clusterLabels)
