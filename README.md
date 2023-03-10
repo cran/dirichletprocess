@@ -3,12 +3,12 @@
 
 # dirichletprocess
 
-[![Travis-CI Build
-Status](https://travis-ci.org/dm13450/dirichletprocess.svg?branch=master)](https://travis-ci.org/dm13450/dirichletprocess)
+[![R build
+status](https://github.com/dm13450/dirichletprocess/workflows/R-CMD-check/badge.svg)](https://github.com/dm13450/dirichletprocess/actions)
 [![AppVeyor Build
 Status](https://ci.appveyor.com/api/projects/status/github/dm13450/dirichletprocess?branch=master&svg=true)](https://ci.appveyor.com/project/dm13450/dirichletprocess)
 [![Coverage
-Status](https://codecov.io/gh/dm13450/dirichletprocess/branch/master/graph/badge.svg)](https://codecov.io/gh/dm13450/dirichletprocess)
+Status](https://codecov.io/gh/dm13450/dirichletprocess/branch/master/graph/badge.svg)](https://app.codecov.io/gh/dm13450/dirichletprocess)
 
 The dirichletprocess package provides tools for you to build custom
 Dirichlet process mixture models. You can use the pre-built
@@ -53,15 +53,7 @@ dp <- Fit(dp, 100, progressBar = FALSE)
 plot(dp)
 ```
 
-![](vignettes/img/density-1.png)<!-- -->
-
-``` r
-data.frame(Weight=dp$weights, Mean=c(dp$clusterParameters[[1]]), SD=c(dp$clusterParameters[[1]]))
-#>        Weight       Mean         SD
-#> 1 0.371323529 -1.1756510 -1.1756510
-#> 2 0.625000000  0.6597522  0.6597522
-#> 3 0.003676471  0.1061095  0.1061095
-```
+<img src=https://github.com/dm13450/dirichletprocess/raw/master/vignettes/img/density-1.png width=50% />
 
 ### Clustering
 
@@ -75,7 +67,7 @@ dpCluster <- Fit(dpCluster, 2000, progressBar = FALSE)
 plot(dpCluster)
 ```
 
-![](vignettes/img/clustering-1.png)<!-- -->
+<img src=https://github.com/dm13450/dirichletprocess/raw/master/vignettes/img/clustering-1.png width=50% />
 
 For more detailed explanations and examples see the vignette.
 
@@ -83,16 +75,23 @@ For more detailed explanations and examples see the vignette.
 
 I’ve written a number of tutorials:
 
-  - [Non parametric
-    priors](http://dm13450.github.io/2019/02/22/Nonparametric-Prior.html)
-  - [Calculating cluster
-    probabilities](http://dm13450.github.io/2018/11/21/Cluster-Probabilities.html)
-  - [Clustering](http://dm13450.github.io/2018/05/30/Clustering.html)
-  - [Point
-    processes](http://dm13450.github.io/2018/03/08/dirichletprocess-pointprocess.html)
-  - [Custom
-    mixtures](http://dm13450.github.io/2018/02/21/Custom-Distributions-Conjugate.html)
-  - [Density
-    estimation](http://dm13450.github.io/2018/02/01/Dirichlet-Density.html)
-  - [Checking
-    convergence](http://dm13450.github.io/2020/01/11/Dirichlet-Convergence.html)
+-   [Non parametric
+    priors](https://dm13450.github.io/2019/02/22/Nonparametric-Prior.html)
+-   [Calculating cluster
+    probabilities](https://dm13450.github.io/2018/11/21/Cluster-Probabilities.html)
+-   [Clustering](https://dm13450.github.io/2018/05/30/Clustering.html)
+-   [Point
+    processes](https://dm13450.github.io/2018/03/08/dirichletprocess-pointprocess.html)
+-   [Custom
+    mixtures](https://dm13450.github.io/2018/02/21/Custom-Distributions-Conjugate.html)
+-   [Density
+    estimation](https://dm13450.github.io/2018/02/01/Dirichlet-Density.html)
+-   [Checking
+    convergence](https://dm13450.github.io/2020/01/11/Dirichlet-Convergence.html)
+
+and some case studies:
+
+-   [State of the Market - Infinite State Hidden Markov
+    Models](https://dm13450.github.io/2020/06/03/State-of-the-Market.html)
+-   [Palmer Penguins and an Introduction to Dirichlet
+    Processes](https://dm13450.github.io/2020/09/28/PriorToPosterior.html)

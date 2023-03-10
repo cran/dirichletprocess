@@ -41,14 +41,15 @@ PosteriorClusters.dirichletprocess <- function(dpobj, ind) {
   sticks <- c(dirichlet_draws[-(numLabels + 1)], sticks)
   # postParams <- rbind(clusterParams, PriorDraw(mdobj, numBreaks))
 
-  n_smps <- numBreaks + numLabels
+  #n_smps <- numBreaks + numLabels
 
   PriorDraws <- PriorDraw(mdobj, numBreaks)
   postParams <- list()
 
   for (i in seq_along(clusterParams)) {
-    postParams[[i]] <- array(c(clusterParams[[i]], PriorDraws[[i]]), dim = c(dim(PriorDraws[[i]])[1:2],
-      numBreaks + numLabels))
+    postParams[[i]] <- array(c(clusterParams[[i]], PriorDraws[[i]]),
+                             dim = c(dim(PriorDraws[[i]])[1:2],
+                                     numBreaks + numLabels))
   }
 
 

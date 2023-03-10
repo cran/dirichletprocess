@@ -1,13 +1,14 @@
 Package: dirichletprocess
 Type: Package
 Title: Build Dirichlet Process Objects for Bayesian Modelling
-Version: 0.4.0
+Version: 0.4.1
 Authors@R: c(
             person("Gordon", "J. Ross", email="gordon@gordonjross.co.uk", role=c("aut")),
             person("Dean", "Markwick", email="dean.markwick@talk21.com", role=c("aut", "cre")),
             person("Kees", "Mulder", email="keestimmulder@gmail.com", role=c("ctb"), 
             comment = c(ORCID = "0000-0002-5387-3812")),
-            person("Giovanni", "Sighinolfi", email ="giovanni.sighinolfi2@studio.unibo.it", role=c("ctb"))
+            person("Giovanni", "Sighinolfi", email ="giovanni.sighinolfi2@studio.unibo.it", role=c("ctb")),
+            person("Filippo Fiocchi", email="filippofiocchi1@gmail.com", role=c("ctb"))
           )
 Maintainer: Dean Markwick <dean.markwick@talk21.com>
 Description: Perform nonparametric Bayesian analysis using Dirichlet 
@@ -27,14 +28,16 @@ Encoding: UTF-8
 LazyData: true
 Suggests: testthat, knitr, rmarkdown, tidyr, dplyr
 Imports: gtools, ggplot2, mvtnorm
-URL: https://github.com/dm13450/dirichletprocess
+URL: https://github.com/dm13450/dirichletprocess,
+        https://dm13450.github.io/dirichletprocess/
 BugReports: https://github.com/dm13450/dirichletprocess/issues
 RoxygenNote: 6.1.1
 NeedsCompilation: no
-Packaged: 2020-06-13 10:22:08 UTC; deanmarkwick
+Packaged: 2023-03-10 11:19:48 UTC; deanmarkwick
 Author: Gordon J. Ross [aut],
   Dean Markwick [aut, cre],
   Kees Mulder [ctb] (<https://orcid.org/0000-0002-5387-3812>),
-  Giovanni Sighinolfi [ctb]
+  Giovanni Sighinolfi [ctb],
+  Filippo Fiocchi [ctb]
 Repository: CRAN
-Date/Publication: 2020-06-13 10:40:02 UTC
+Date/Publication: 2023-03-10 11:50:02 UTC
